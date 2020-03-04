@@ -24,7 +24,7 @@ db.serialize(() => {
 
 db.close((err) => {
   if (err) {
-    console.err(err.message);
+    console.error(err.message);
   }
   console.log('Database connection closed');
 });

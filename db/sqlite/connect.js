@@ -11,11 +11,6 @@ function connect(file = 'dev.sqlite3') {
   });
 }
 
-let db = connect();
-
-db.close((err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Closed the database connection');
-});
+module.exports = {
+  connect
+}

@@ -1,9 +1,13 @@
 const db = require('./connect.js').connect();
 
 const seed_data = [
-  { date: '2020-02-29', max: 42.4, min: 17.1 , avg: 29.4 },
-  { date: '2020-03-01', max: 52.1, min: 22.1 , avg: 26.4 },
-  { date: '2020-03-02', max: 47.9, min: 33.2 , avg: 30.4 }
+  { date: '2020-02-24', max: 43.9, min: 38.1, avg: 40.5 },
+  { date: '2020-02-25', max: 41.2, min: 32.5, avg: 37.3 },
+  { date: '2020-02-26', max: 33.1, min: 25.7, avg: 30.0 },
+  { date: '2020-02-27', max: 34.2, min: 22.1, avg: 27.8 },
+  { date: '2020-02-28', max: 33.1, min: 19.0, avg: 25.2 },
+  { date: '2020-02-29', max: 42.4, min: 17.1, avg: 29.4 },
+  { date: '2020-03-01', max: 61.3, min: 31.5, avg: 46.7 }
 ];
 
 

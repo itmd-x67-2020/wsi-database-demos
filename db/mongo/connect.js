@@ -5,7 +5,7 @@ const url = "mongodb://localhost:27017";
 
 const dbName = 'kastest';
 
-const client = new mongo(url);
+const client = new mongo(url, { useUnifiedTopology: true });
 
 client.connect(function(err) {
 

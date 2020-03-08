@@ -4,7 +4,8 @@
   "description": "Examples for database connections and interactions",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mongo-start": "mongod --config /usr/local/etc/mongod.conf"
   },
   "author": "Karl Stolley <karl.stolley@gmail.com>",
   "license": "ISC",

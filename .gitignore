@@ -1,2 +1,4 @@
 node_modules
 *.sqlite3
+db/mongo/var/log/*.*
+db/mongo/var/mongodb

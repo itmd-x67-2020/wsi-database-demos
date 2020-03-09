@@ -1,11 +1,9 @@
-const Mongo = require('mongodb').MongoClient;
+const mongo = require('mongodb').MongoClient;
 const url = process.env.WX_NODE_MONGO_URL;
 
 const db_name = "wsi-test";
 
-const client = new Mongo(url, { useUnifiedTopology: true });
-
-client.connect(function(err) {
+mongo.connect(url, { useUnifiedTopology: true }, function(err,client) {
   if (err) {
     console.error(err.message);
   } else {

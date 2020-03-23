@@ -17,9 +17,9 @@ const records = JSON.parse(records_json);
 
     const coll = db.collection(collection);
 
-    coll.drop(function(e,r) {
+    coll.drop(function(err,result) {
       if (e) {
-        console.log(e.message);
+        console.error(e.message);
       }
     });
 

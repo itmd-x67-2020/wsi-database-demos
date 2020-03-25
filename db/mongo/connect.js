@@ -13,3 +13,15 @@ async function connect(url) {
 module.exports = {
   connect
 }
+
+/*
+// Uncomment to diagnose connection script
+(async function() {
+  let c = await connect(url);
+  if(c) {
+    console.log("Connected successfully");
+    c.close();
+    console.log("Closed successfully");
+  }
+})();
+*/

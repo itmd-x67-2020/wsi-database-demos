@@ -1,14 +1,15 @@
 const mongo = require('mongodb').MongoClient;
 const url = process.env.WX_NODE_MONGO_URL;
 
-const db_name = "wsi-test";
-
-mongo.connect(url, { useUnifiedTopology: true }, function(err,client) {
-  if (err) {
+async function connect(url) {
+  try {
+    let client = await mongo.connect(url, { useUnifiedTopology: true});
+    return client;
+  } catch(err) {
     console.error(err.message);
-  } else {
-    console.log("Connected successfully to server");
-    const db = client.db(db_name);
-    client.close();
   }
-});
+}
+
+module.exports = {
+  connect
+}

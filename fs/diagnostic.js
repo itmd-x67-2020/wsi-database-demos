@@ -9,7 +9,7 @@ const fsp = require('fs').promises;
     const records_obj = JSON.parse(records);
     // Log the raw records file contents as returned
     console.log(records);
-    // Log, as an exaple, the max_temp record's value
+    // Log, as an example, the max_temp record's value
     console.log("Max Temp:", records_obj.records.max_temp.value)
   } catch(err) {
     console.log(err.message);

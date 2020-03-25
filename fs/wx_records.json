@@ -1,0 +1,12 @@
+{
+  "records": {
+    "max_temp": {
+      "value": 104,
+      "date": "2019-08-24"
+    },
+    "min_temp": {
+      "value": -32,
+      "date": "2018-02-13"
+    }
+  }
+}

@@ -8,26 +8,31 @@ const records_json = '[{"dateutc":1580328600000,"tempinf":68,"tempf":33.3,"humid
 const records = JSON.parse(records_json);
 
 (async function() {
-  const connection = await mdb.connect(url);
-
-  const db = connection.db(dbName);
-  const coll = db.collection('wx_observations');
-
   try {
-    await coll.drop();
+    const connection = await mdb.connect(url);
+
+    const db = connection.db(dbName);
+    const coll = db.collection('wx_observations');
+
+    try {
+      await coll.drop();
+    } catch(err) {
+      console.error(err.message);
+    }
+
+    const wr = await coll.insertMany(records);
+    console.log(`Inserted ${wr.insertedCount} records`);
+
+    const er = await coll.stats();
+    console.log(`Collection has ${er.count} records total`)
+
+    if(connection) {
+      connection.close();
+      console.log('Closed database connection');
+    }
+
   } catch(err) {
-    console.error(err.message);
-  }
-
-  const wr = await coll.insertMany(records);
-  console.log(`Inserted ${wr.insertedCount} records`);
-
-  const er = await coll.stats();
-  console.log(`Collection has ${er.count} records total`)
-
-  if(connection) {
-    connection.close();
-    console.log('Closed database connection');
+    console.error(err.stack)
   }
 
 })();
